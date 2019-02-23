@@ -1,0 +1,8 @@
+{
+  "name": "iro",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yadex205/iro",
+  "author": "Kanon Kakuno <yadex205@outlook.jp>",
+  "license": "MIT"
+}
