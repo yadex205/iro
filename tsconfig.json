@@ -6,9 +6,9 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-
+      "components/*": ["./src/client/components/*"]
     },
     "jsx": "react",
     "lib": [

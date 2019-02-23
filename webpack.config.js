@@ -5,6 +5,6 @@ const SETTINGS_SERVER = require('./webpack/server.config');
 const SETTINGS_CLIENT = require('./webpack/client.config');
 
 module.exports = [
-  merge(SETTINGS_COMMON, SETTINGS_SERVER),
-  merge(SETTINGS_COMMON, SETTINGS_CLIENT)
+  merge(SETTINGS_COMMON, SETTINGS_CLIENT),
+  merge(SETTINGS_COMMON, SETTINGS_SERVER)
 ];
