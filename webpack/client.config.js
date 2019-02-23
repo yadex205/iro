@@ -20,7 +20,10 @@ module.exports = {
   },
   devServer: {
     hot: true,
-    port: 3000
+    port: 3000,
+    proxy: {
+      '/api': 'http://localhost:8000/'
+    }
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
