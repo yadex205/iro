@@ -1,8 +1,25 @@
 {
   "name": "iro",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/yadex205/iro",
   "author": "Kanon Kakuno <yadex205@outlook.jp>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/node": "^11.9.5",
+    "ts-loader": "^5.3.3",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
