@@ -8,7 +8,10 @@ const DSTDIR = resolve(ROOTDIR, './dist/public');
 
 module.exports = {
   name: 'client',
-  entry: resolve(SRCDIR, './js/app.ts'),
+  entry: [
+    resolve(SRCDIR, './js/app.ts'),
+    resolve(SRCDIR, './css/app.scss'),
+  ],
   output: {
     path: DSTDIR,
     filename: 'assets/js/app.js'
@@ -30,6 +33,19 @@ module.exports = {
         test: /.tsx?$/,
         use: 'ts-loader',
         exclude: resolve(ROOTDIR, './node_modules')
+      },
+      {
+        test: /.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              importer: require('node-sass-glob-importer')()
+            }
+          }
+        ]
       }
     ]
   },
