@@ -5,12 +5,17 @@ const SRCDIR = resolve(ROOTDIR, './src/server');
 const DSTDIR = resolve(ROOTDIR, './dist');
 
 module.exports = {
+  name: 'server',
   entry: resolve(SRCDIR, './index.ts'),
   output: {
     path: DSTDIR,
     filename: 'index.js'
   },
   target: 'node',
+  node: {
+    __filename: false,
+    __dirname: false
+  },
   module: {
     rules: [
       {
