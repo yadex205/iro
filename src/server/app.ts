@@ -12,7 +12,23 @@ app.get('/api', async (req, res) => {
   try {
     res.json({ app_version: process.env.npm_package_version,
                mirakurun_version: (await client.version()).current });
-  } catch(error) {
+  } catch (error) {
+    res.json({ error: { message: 'Cannot obtain from Mirakurun' } });
+  }
+});
+
+app.get('/api/channels', async (req, res) => {
+  try {
+    res.json(await client.channels());
+  } catch (error) {
+    res.json({ error: { message: 'Cannot obtain from Mirakurun' } });
+  }
+});
+
+app.get('/api/programs', async (req, res) => {
+  try {
+    res.json(await client.programs());
+  } catch (error) {
     res.json({ error: { message: 'Cannot obtain from Mirakurun' } });
   }
 });
