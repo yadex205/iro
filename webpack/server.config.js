@@ -1,5 +1,4 @@
 const { resolve } = require('path');
-const { DefinePlugin } = require('webpack');
 const NodemonPlugin = require('nodemon-webpack-plugin');
 
 const ROOTDIR = resolve(__dirname, '../');
@@ -20,6 +19,9 @@ module.exports = {
     __filename: false,
     __dirname: false
   },
+  resolve: {
+    extensions: ['.js', '.ts']
+  },
   plugins: [
     new NodemonPlugin({
       restartable: 'rs',
@@ -31,10 +33,7 @@ module.exports = {
         resolve(DSTDIR, './public')
       ],
       script: resolve(DSTDIR, './index.js')
-    }),
-    new DefinePlugin({
-      'process.env.APP_VERSION': JSON.stringify(APP_VERSION)
-    })
+   })
   ],
   module: {
     rules: [
