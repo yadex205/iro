@@ -4,12 +4,10 @@ import { hot } from 'react-hot-loader/root';
 
 import Home from 'components/pages/home';
 
-function Root() {
-  return (
-    <Router>
-      <Route exact path="/" component={Home} />
-    </Router>
-  );
-}
+const Root: React.FunctionComponent = () => (
+  <Router>
+    <Route exact path="/" component={Home} />
+  </Router>
+);
 
 export default hot(Root);
