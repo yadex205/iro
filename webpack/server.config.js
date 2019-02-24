@@ -1,9 +1,12 @@
 const { resolve } = require('path');
+const { DefinePlugin } = require('webpack');
 const NodemonPlugin = require('nodemon-webpack-plugin');
 
 const ROOTDIR = resolve(__dirname, '../');
 const SRCDIR = resolve(ROOTDIR, './src/server');
 const DSTDIR = resolve(ROOTDIR, './dist');
+
+const APP_VERSION = require(resolve(ROOTDIR, './package.json')).version;
 
 module.exports = {
   name: 'server',
@@ -28,6 +31,9 @@ module.exports = {
         resolve(DSTDIR, './public')
       ],
       script: resolve(DSTDIR, './index.js')
+    }),
+    new DefinePlugin({
+      'process.env.APP_VERSION': JSON.stringify(APP_VERSION)
     })
   ],
   module: {

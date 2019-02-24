@@ -9,7 +9,7 @@ app.use('/', express.static(resolve(__dirname, './public')));
 
 app.get('/api', (req, res) => {
   res.json({
-    version: '0.0.0'
+    app_version: process.env.APP_VERSION
   });
 });
 
