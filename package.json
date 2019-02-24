@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server",
+    "start": "concurrently -n server,client \"npm:start:server\" \"npm:start:client\"",
+    "start:client": "webpack-dev-server --config-name=client",
+    "start:server": "webpack --watch --config-name=server",
     "lint": "eslint ./src --ext .ts --ext .tsx"
   },
   "devDependencies": {
@@ -22,6 +24,7 @@
     "@typescript-eslint/eslint-plugin": "^1.4.1",
     "@typescript-eslint/parser": "^1.4.1",
     "babel-loader": "^8.0.5",
+    "concurrently": "^4.1.0",
     "css-loader": "^2.1.0",
     "eslint": "^5.14.1",
     "eslint-plugin-react": "^7.12.4",
