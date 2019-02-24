@@ -33,4 +33,12 @@ app.get('/api/programs', async (req, res) => {
   }
 });
 
+app.get('/api/tuners', async (req, res) => {
+  try {
+    res.json(await client.tuners());
+  } catch (error) {
+    res.json({ error: { message: 'Cannot obtain from Mirakurun' } });
+  }
+});
+
 export default app;
