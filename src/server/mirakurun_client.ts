@@ -4,7 +4,6 @@ import { Version, Channel, Program, TunerDevice } from 'mirakurun/api';
 
 const DEFAULT_MIRAKURUN_PORT = 40772;
 
-
 export default class MirakurunClient {
   private agent: AxiosInstance;
 
